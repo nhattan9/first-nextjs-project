@@ -15,7 +15,6 @@ export const metadata = {
 export default async function LoginPage({
   searchParams,
 }: {
-  //=? redirect có thể có hoặc không, nếu có thì phải là string.
   searchParams: Promise<{ redirect?: string }>;
 }) {
   const { redirect } = await searchParams;
@@ -34,7 +33,7 @@ export default async function LoginPage({
       )}
 
       <div className="mt-6">
-        <LoginForm />
+        <LoginForm redirectTo={redirect} />
       </div>
 
       <Link href="/" className="mt-4 inline-block text-sm text-accent">
